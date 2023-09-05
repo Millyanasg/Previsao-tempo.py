@@ -8,8 +8,8 @@ Uma chave API do OpenWeatherMap. Obtenha aqui.
 Instalação e Configuração
 
 **Clone o repositório:**
-git clone [URL_DO_SEU_REPOSITÓRIO]
-cd [NOME_DO_DIRETÓRIO_DO_PROJETO]
+git clone https://github.com/Millyanasg/Previs-o-tempo.py
+cd flask_weather_app
 
 **Crie um ambiente virtual:**
 python -m venv myenv
