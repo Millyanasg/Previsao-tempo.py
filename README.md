@@ -2,37 +2,52 @@
 Este é um aplicativo Flask que fornece a previsão do tempo para uma cidade específica usando a API OpenWeatherMap.
 
 **Pré-requisitos**
-Python 3.8
-pip
-Uma chave API do OpenWeatherMap. Obtenha aqui.
-Instalação e Configuração
+* Python 3.8
+* pip
+* Uma chave API do OpenWeatherMap. Obtenha aqui.
+
+> ### <i>INSTALAÇÃO E CONFIGURAÇÃO</i>
+
 
 **Clone o repositório:**
-git clone https://github.com/Millyanasg/Previs-o-tempo.py
+~~~~
+git clone https://github.com/Millyanasg/Previsao-tempo.py
 cd flask_weather_app
+~~~~
 
 **Crie um ambiente virtual:**
+~~~
 python -m venv myenv
+~~~
 Ative o ambiente virtual:
 
-**No Windows**
-.\myenv\Scripts\Activate
-**No Linux ou macOS:**
-source myenv/bin/activate
+**No Windows**           | **No Linux ou macOS:**
+-------------------------|-------------------------
+`.\myenv\Scripts\Activate`| `source myenv/bin/activate`
+
 
 **Instale as dependências:**
+~~~
 pip install -r requirements.txt
+~~~
 
 **Configurando a Chave API:**
-Copie o arquivo .env.example para .env.
-Abra o arquivo .env e defina OPEN_WEATHER_API_KEY com sua chave API do OpenWeatherMap.
+
+* Copie o arquivo .env.
+* Abra o arquivo .env e defina OPEN_WEATHER_API_KEY com sua chave API do <ins>[OpenWeatherMap](https://openweathermap.org/api)</ins>.
+
+
 
 **Executando o Aplicativo:**
-Para iniciar o aplicativo, simplesmente execute:
+
+* Para iniciar o aplicativo, simplesmente execute:
+~~~
 python app.py
-Acesse http://localhost:5000/ no seu navegador para ver o aplicativo em ação.
+~~~
+
+* Acesse<i> http://localhost:5000/</i> no seu navegador para ver o aplicativo em ação.
 
 
-# Criador
-Millyana Souza. 
+###### By : Millyana Souza 
+![app](https://github.com/Millyanasg/Previsao-tempo.py/assets/104023907/04056ca5-d750-43b6-a6fc-ca5b5e02d063)
 
