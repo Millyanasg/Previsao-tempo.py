@@ -6,13 +6,14 @@ import requests
 app = Flask(__name__)
 app.secret_key = 'some_secret_key'
 API_KEY = config('OPEN_WEATHER_API_KEY')
-API_URL = "http://api.openweathermap.org/data/2.5/weather?q={{}}&appid={API_KEY}"
+API_URL = "http://api.openweathermap.org/data/2.5/weather?q={}&appid={}"
+
 
 def get_temperature_details(celsius: float) -> str:
     if 28 <= celsius <= 32:
-        return {'icon': 'melting.png', 'text': 'Certamente está todo mundo começando a derreter!'}
+        return {'icon': 'melting.png', 'text': 'Certamente, está todo mundo começando a derreter!'}
     elif 32 <= celsius <= 45:
-        return {'icon': 'extreme_heat.png', 'text': 'Observamos aqui uma mostra gràtis do inferno!'}
+        return {'icon': 'extreme_heat.png', 'text': 'Observamos aqui, uma mostra gràtis do inferno!'}
     elif 10 <= celsius < 16:
         return {'icon': 'extreme_cold.png', 'text': 'A Elsa passou e deixou o LERIGOOU!'}
     elif 16 <= celsius < 20:
@@ -23,7 +24,7 @@ def get_temperature_details(celsius: float) -> str:
         return {'icon': 'default_icon.png', 'text': 'Quem dera se todos os dias fossem assim, não acha ?'}
 
 def get_weather(city: str) -> dict:
-    response = requests.get(API_URL.format(city))
+    response = requests.get(API_URL.format(city, API_KEY))
     if response.status_code == 200:
         data = response.json()
         kelvin = data['main']['temp']
@@ -35,11 +36,12 @@ def get_weather(city: str) -> dict:
         return {
             'city': data['name'],
             'temperature': "{:.1f}°C".format(celsius),
-             'icon': icon_name,
+            'icon': icon_name,
             'temp_text': temp_text,
         }
     else:
         return None
+
 
 @app.route('/', methods=['GET', 'POST'])
 def home():
