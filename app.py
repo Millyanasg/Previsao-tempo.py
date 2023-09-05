@@ -1,11 +1,11 @@
-
+import os
 from flask import Flask, render_template, request, flash
 from decouple import config
 import requests
 
 app = Flask(__name__)
 app.secret_key = 'some_secret_key'
-API_KEY = config('OPEN_WEATHER_API_KEY')
+API_KEY = config('OPEN_WEATHER_API_KEY', default='')
 API_URL = "http://api.openweathermap.org/data/2.5/weather?q={}&appid={}"
 
 
@@ -60,4 +60,6 @@ def home():
     return render_template('home.html', weather=weather)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    # app.run(debug=True)
+    port = int(os.environ.get("PORT", 8080))
+    app.run(debug=False, host='0.0.0.0', port=port)
