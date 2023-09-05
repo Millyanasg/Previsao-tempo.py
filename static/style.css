@@ -1,0 +1,87 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=ADLaM+Display&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+html, body {
+margin: 0;
+box-sizing: border-box;
+background-image: url('./images/ceu.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+display: flex;
+align-items: center;
+justify-content: center;
+background-attachment: fixed;
+min-height: 100%;
+
+}
+.container {
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.3);  
+    backdrop-filter: blur(10px);  
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 2px 2px 2px 5px rgba(10, 10, 10, 0.1);   
+    padding: 10px;      
+}
+h2{
+    font-family: 'ADLaM Display', cursive;
+    text-shadow: 
+        -1px -1px 0 white,  
+        1px -1px 0 white,
+        -1px 1px 0 white,
+        1px 1px 0 white;
+        font-size: 33px;
+}
+h3{
+    font-family: 'Dancing Script', cursive;
+    font-size: 40px;
+    line-height: 0.5rem;
+}
+
+img {
+    background-size: contain;
+    width: 30vmin;
+    margin-left: 15px;
+}
+.card {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    @media (max-width: 850px) {
+        flex-direction: column ;
+        justify-content: center;
+    }
+}
+.description {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+}
+.temp{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    text-shadow: 
+        -1px -2px 0 #000,  
+        1px -2px 0 #000,
+        -1px 2px 0 #000,
+        1px 2px 0 #000;
+        color : #2783b4;
+        line-height: 0.3rem;
+}
+.phrase{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    line-height: 0.9rem;
+    text-align: center;
+    @media (max-width: 850px) {
+     width: 80%;
+    }
+}

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"/>
+    <title>Previsão do Tempo</title>
+</head>
+<body>
+    <div class="container">
+<h2>Previsão do tempo</h2>
+<form method="post">
+    <input type="text" name="city" placeholder="Nome da cidade" style="border-radius: 8px; padding: 5px;">
+    <input type="submit" value="Verificar" style="background-color:#FABF22; border-radius: 8px; padding: 5px; font-size: 12px;">
+</form>
+
+{% if weather %}
+<h3>{{ weather.city }}</h3>
+<div class="card">
+            <img src="{{ url_for('static', filename='images/' + weather.icon) }}" alt="Weather Icon">
+<div class="description">
+    <p class="temp"> {{ weather.temperature }}</p>
+    <p class="phrase"> {{ weather.temp_text }} </p>
+{% endif %}
+</div>
+    {% for day in daily_forecasts %}
+        <img src="{{ url_for('static', filename='icons/' + day.weather[0].icon + '.svg') }}" alt="{{ day.weather[0].description }}">
+        <p>{{ day.temp.day - 273.15 }}°C</p> 
+{% endfor %}   
+</div>
+</div>
+</body>
+</html>
